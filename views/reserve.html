@@ -87,11 +87,12 @@
 
  $("#reserve").on("click", function(event) {
       event.preventDefault();
+      custID ++;
       var newReserve = {
         customerName: $('#reserveName').val().trim(),
         phoneNumber: $('#reservePhone').val().trim(),
         customerEmail: $('#reserveEmail').val().trim(),
-        customerID: ' Test2',
+        customerID: custID,
       };
 
       // Question: What does this code do??
