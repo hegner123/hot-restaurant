@@ -60,9 +60,9 @@
 
 
 $.ajax({ url: "/api/tables", method: "GET" })
-     .then(function(tableData) {
+     .then(function(res) {
        // Here we then log the tableData to console, where it will show up as an object.
-       console.log(tableData);
+       console.log(res);
        console.log("------------------------------------");
      });
 

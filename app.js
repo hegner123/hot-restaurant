@@ -2,13 +2,7 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var PORT = process.env.PORT || 3000;
-//data
-var waitingTables = [
 
-];
-var reservedTables = [
-
-]
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -40,6 +34,15 @@ app.post("/api/reserve", function(req, res) {
         console.log("Table Reserved");
     };
   });
+
+
+  //data
+var waitingTables = [
+
+];
+var reservedTables = [
+
+]
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
