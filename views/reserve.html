@@ -45,4 +45,23 @@
         </div>
     </footer>
 </body>
+
+<script>
+$("#reserve").on("click", function(event) {
+      event.preventDefault();
+      var newReserve = {
+        customerName: $('#reserveName').val.trim(),
+        phoneNumber: $('#reservePhone').val.trim(),
+        customerEmail: $('#reserveEmail').val.trim(),
+        customerID: ' Test2',
+      };
+
+      // Question: What does this code do??
+      $.post("/api/reserve", newReserve)
+        .then(function(data) {
+          console.log("add.html", data);
+          alert("Adding Reservation...");
+        });
+    });
+</script>
 </html>

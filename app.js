@@ -47,3 +47,15 @@ var reservedTables = [
     }
 ]
 //functions
+
+
+
+// Create New Reservation - takes in JSON input
+var  reserver
+app.post("/api/reserve", function(req, res) {
+    var newReserve = req.body;
+    newReserve.routeName = newReserve.name.replace(/\s+/g, "").toLowerCase();
+    console.log(newReserve);
+    reservedTables.push(newReserve);
+    res.json(newReserve);
+  });
