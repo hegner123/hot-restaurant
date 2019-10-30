@@ -7,20 +7,10 @@ var PORT = process.env.PORT || 3000;
 
 //data
 var waitingTables = [
-    {
-        customerName: ' ',
-        phoneNumber: ' ',
-        customerEmail: ' ',
-        customerID: ' Test1',
-    }
+
 ];
 var reservedTables = [
-    {
-        customerName: ' ',
-        phoneNumber: ' ',
-        customerEmail: ' ',
-        customerID: ' Test2',
-    }
+
 ]
 
 // Sets up the Express app to handle data parsing
@@ -36,7 +26,7 @@ app.get("/reserve", function(req, res) {
 app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "views/tables.html"));
 });
-app.get("/api/reserve", function(req, res) {
+app.get("/api/tables", function(req, res) {
     return res.json(waitingTables);
 });
 app.get("/api/tables", function(req, res) {
