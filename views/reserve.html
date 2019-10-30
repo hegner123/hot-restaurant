@@ -61,9 +61,9 @@ $("#reserve").on("click", function(event) {
       // Question: What does this code do??
       $.post("../api/reserve", newReserve)
         .then(function(data) {
-          console.log("add.html", data);
-          alert("Adding Reservation...");
+        console.log(data);
         });
     });
 </script>
+
 </html>
