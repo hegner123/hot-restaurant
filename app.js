@@ -45,7 +45,8 @@ app.get("/api/tables", function(req, res) {
 
 app.post("/api/reserve", function(req, res) {
     var newReserve = req.body;
-    res.json(newReserve);
+    reservedTables.push(newReserve);
+    res.json(reservedTables);
   });
 
 app.listen(PORT, function() {

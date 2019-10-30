@@ -59,7 +59,7 @@ $("#reserve").on("click", function(event) {
       };
 
       // Question: What does this code do??
-      $.post("../api/reserve", newReserve)
+      $.post("/api/reserve", newReserve)
         .then(function(data) {
         console.log(data);
         });
