@@ -5,6 +5,24 @@ var app = express();
 
 var PORT = process.env.PORT || 3000;
 
+//data
+var waitingTables = [
+    {
+        customerName: ' ',
+        phoneNumber: ' ',
+        customerEmail: ' ',
+        customerID: ' Test1',
+    }
+];
+var reservedTables = [
+    {
+        customerName: ' ',
+        phoneNumber: ' ',
+        customerEmail: ' ',
+        customerID: ' Test2',
+    }
+]
+
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -25,25 +43,16 @@ app.get("/api/tables", function(req, res) {
     return res.json(reservedTables);
 });
 
+app.post("/api/reserve", function(req, res) {
+    var newReserve = req.body;
+    newReserve.routeName = newReserve.name.replace(/\s+/g, "").toLowerCase();
+    console.log(newReserve,req.body);
+    reservedTables.push(newReserve);
+    res.json(newReserve);
+  });
+
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
 });
 
-//data
-var waitingTables = [
-    {
-        customerName: ' ',
-        phoneNumber: ' ',
-        customerEmail: ' ',
-        customerID: ' Test1',        
-    }
-];
-var reservedTables = [
-    {
-        customerName: ' ',
-        phoneNumber: ' ',
-        customerEmail: ' ',
-        customerID: ' Test2',        
-    }
-]
-//functions
+
