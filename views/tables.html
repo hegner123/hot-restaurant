@@ -60,9 +60,14 @@
 
 
 $.ajax({ url: "/api/tables", method: "GET" })
-     .then(function(res) {
-       // Here we then log the tableData to console, where it will show up as an object.
-       console.log(res);
+     .then(function(tableData) {
+      console.log(tableData);
+      for (i=0; i<tableData.length;i++){
+        var listStuff = $('<li class="bg-light">');
+          
+          listStuff.text(tableData[i].customerName);
+          listStuff.appendTo('#tableList');
+      }
        console.log("------------------------------------");
      });
 

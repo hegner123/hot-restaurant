@@ -15,11 +15,11 @@ app.get("/reserve", function(req, res) {
 app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "views/tables.html"));
 });
-app.get("/api/tables", function(req, res) {
-    return res.json(waitingTables);
+app.get("/api/waitlist", function(req, res) {
+    res.json(waitingTables);
 });
 app.get("/api/tables", function(req, res) {
-    return res.json(reservedTables);
+    res.json(reservedTables);
 });
 app.post("/api/reserve", function(req, res) {
     var newReserve = req.body;
