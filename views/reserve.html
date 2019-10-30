@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hot Restaurant</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 <body>
     <div class="container">
@@ -33,7 +34,7 @@
             <input type="email" class="form-control" id="reserveEmail" placeholder="you@unicorn.com">
         </div>
         
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
         </div>
       </form>
     </div>
@@ -42,5 +43,18 @@
             <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a>
         </div>
     </footer>
+
+
+    <script type="text/javascript">
+      $("#add-btn").on("click", function(event) {
+        event.preventDefault();
+        var newReservation = {
+          name: $("#reserveName").val().trim(),
+          phone: $("#reservePhone").val().trim(),
+          email: $("#reserveEmail").val().trim(),
+        };
+      });
+    
+    </script>
 </body>
 </html>
