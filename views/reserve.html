@@ -52,9 +52,9 @@
 $("#reserve").on("click", function(event) {
       event.preventDefault();
       var newReserve = {
-        customerName: $('#reserveName').val,
-        phoneNumber: $('#reservePhone').val,
-        customerEmail: $('#reserveEmail').val,
+        customerName: $('#reserveName').val(),
+        phoneNumber: $('#reservePhone').val(),
+        customerEmail: $('#reserveEmail').val(),
       };
 
       // Question: What does this code do??
